@@ -1,0 +1,36 @@
+﻿@model XML_validator.Models.XmlUploadViewModel
+
+@{
+    ViewData["Title"] = "XML Validator";
+}
+
+<div class="validator-shell">
+    <div class="card shadow-sm validator-card">
+        <div class="card-body p-4">
+            <h1 class="h4 mb-2">Validate XML Against Schema</h1>
+            <p class="text-muted mb-4">Upload one XSD file and one XML file to validate the document.</p>
+
+            <form asp-action="Index" method="post" enctype="multipart/form-data" class="validator-form">
+                <div asp-validation-summary="All" class="text-danger"></div>
+
+                <div>
+                    <label asp-for="SchemaFile" class="form-label"></label>
+                    <input asp-for="SchemaFile" type="file" class="form-control" accept=".xsd" />
+                    <span asp-validation-for="SchemaFile" class="text-danger"></span>
+                </div>
+
+                <div>
+                    <label asp-for="XmlFile" class="form-label"></label>
+                    <input asp-for="XmlFile" type="file" class="form-control" accept=".xml" />
+                    <span asp-validation-for="XmlFile" class="text-danger"></span>
+                </div>
+
+                <button type="submit" class="btn btn-primary w-100">Validate XML</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

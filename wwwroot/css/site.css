@@ -1,0 +1,50 @@
+html {
+    font-size: 14px;
+    position: relative;
+    min-height: 100%;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.btn:focus,
+.btn:active:focus,
+.btn-link.nav-link:focus,
+.form-control:focus,
+.form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+body {
+    margin-bottom: 60px;
+    background: #f8f9fa;
+}
+
+.validator-shell {
+    min-height: calc(100vh - 180px);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 2rem 1rem;
+}
+
+.validator-card {
+    width: min(100%, 960px);
+}
+
+.validator-form {
+    display: grid;
+    gap: 1rem;
+}
+
+.validator-form .form-label {
+    font-weight: 600;
+}
+
+.validator-table td,
+.validator-table th {
+    vertical-align: middle;
+}
